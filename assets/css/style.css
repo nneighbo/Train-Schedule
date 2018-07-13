@@ -1,0 +1,24 @@
+.nav-head {
+    color: #eee;
+    padding: 25px;
+    font-size: 48px;
+    text-align: center;
+}
+
+.invis {
+    color: #343a40;
+}
+
+.form-item {
+    margin-top: 15px;
+}
+
+#new-train-submit {
+    background-color: #343a40;
+    color: #eee;
+}
+
+#table-list {
+    margin-top: 25px;
+}
+

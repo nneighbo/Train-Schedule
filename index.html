@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <title>Train Schedule</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-10">
+                <nav class="nav navbar-dark bg-dark justify-content-between">
+                    <h1 class="invis">pst</h1>
+                    <h1 class="nav-head">Train Schedule</h1>
+                    <h1 class="invis">pst</h1>
+                </nav>
+            </div>
+            <div class="col-lg-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div id="table-list" class="card">
+                    <div class="card-header">
+                        <h3>Train Times</h1>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </thead>
+                        <tbody>
+                            <th scope="row">Choo Choo</th>
+                            <td>Train Land</td>
+                            <td class="fre-time" >25</td>
+                            <td class="ari-time" >9:25</td>
+                            <td class="min-arive" >2</td>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="col-lg-1">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="card" style="width: 100%; margin-top: 35px;">
+                    <div class="card-header">
+                        <h1>Add Train</h1>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-item">
+                                <label for="name">Train Name</label>
+                                <input type="name" class="form-control" id="train-name" aria-describedby="trainName" placeholder="Ocean Coaster">
+                            </div>
+                            <div class="form-item">
+                                <label for="destination">Destination</label>
+                                <input type="destination" class="form-control" id="train-destination" aria-describedby="trainDestination" placeholder="Los Angelas">
+                            </div>
+                            <div class="form-item">
+                                <label for="frequency">Frequency (min)</label>
+                                <input type="frequency" class="form-control" id="train-frequency" aria-describedby="trainFrequency" placeholder="45">
+                            </div>
+                            <div class="form-item">
+                                <label for="min-away">Minutes Away</label>
+                                <input type="min-away" class="form-control" id="minutes-away" aria-describedby="minutesAway" placeholder="15">
+                            </div>
+                            <div class="form-item">
+                                <button type="submit" id="new-train-submit" class="btn">Submit</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
