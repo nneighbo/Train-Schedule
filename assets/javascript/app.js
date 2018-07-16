@@ -16,43 +16,48 @@ $(document).ready(function () {
     var trainDestination = "";
     var trainFrequency = 0;
     var nextArrival = 0;
-    var minutesAway = 0;
 
     $("#new-train-submit").on("click", function (event) {
         event.preventDefault();
         trainName = $("#train-name").val();
         trainDestination = $("#train-destination").val();
         trainFrequency = $("#train-frequency").val();
-        minutesAway = $("#minutes-away").val();
  
         database.ref().push({
             name: trainName,
             des: trainDestination,
-            mins: minutesAway,
             fre: trainFrequency,
         });
 
     });
 
     database.ref().on("child_added", function (snapshot) {
+        var trainFreq = snapshot.val().fre
         var body = $("<tbody>");
         var nameTd = $("<th>");
         nameTd.attr("scope", "row");
         var desTd = $("<td>");
         var freTd = $("<td>");
-        var minsTd = $("<td>");
-        var arrival = $("<td>");
-
-        nameTd.text(snapshot.val().name);
-        desTd.text(snapshot.val().des);
-        minsTd.text(snapshot.val().mins);
-        freTd.text(snapshot.val().fre);
+        var nameTd = nameTd.text(snapshot.val().name);
+        var desTd = desTd.text(snapshot.val().des);
+        var freTd = freTd.text(snapshot.val().fre);
+        var currentTime = moment();
+        var firstTimeConverted = moment(currentTime, "HH:mm").subtract(1, "years");
+        console.log(firstTimeConverted)
+        var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+        console.log(diffTime)
+        var tRemainder = diffTime % trainFreq;
+        console.log(tRemainder)
+        var tMinutesTillTrain = trainFreq - tRemainder;
+        console.log(tMinutesTillTrain)
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+        var arrival = moment(nextTrain).format("hh:mm");
 
         body.append(nameTd);
         body.append(desTd);
         body.append(freTd);
-        body.append(arrival);
-        body.append(minsTd);
+        body.append("<td>" + arrival + "</td>");
+        body.append("<td>" + tMinutesTillTrain + "</td>");
 
         $("table").append(body);
 

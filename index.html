@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <title>Train Schedule</title>
 </head>
 
@@ -47,11 +48,7 @@
                             <th scope="col">Minutes Away</th>
                         </thead>
                         <tbody>
-                            <th scope="row">Choo Choo</th>
-                            <td>Train Land</td>
-                            <td class="fre-time" >25</td>
-                            <td class="ari-time" >9:25</td>
-                            <td class="min-arive" >2</td>
+             
                         </tbody>
                     </table>
 
@@ -76,15 +73,11 @@
                             </div>
                             <div class="form-item">
                                 <label for="destination">Destination</label>
-                                <input type="destination" class="form-control" id="train-destination" aria-describedby="trainDestination" placeholder="Los Angelas">
+                                <input type="destination" class="form-control" id="train-destination" aria-describedby="trainDestination" placeholder="Los Angeles">
                             </div>
                             <div class="form-item">
                                 <label for="frequency">Frequency (min)</label>
                                 <input type="frequency" class="form-control" id="train-frequency" aria-describedby="trainFrequency" placeholder="45">
-                            </div>
-                            <div class="form-item">
-                                <label for="min-away">Minutes Away</label>
-                                <input type="min-away" class="form-control" id="minutes-away" aria-describedby="minutesAway" placeholder="15">
                             </div>
                             <div class="form-item">
                                 <button type="submit" id="new-train-submit" class="btn">Submit</button>
